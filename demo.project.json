@@ -1,0 +1,19 @@
+{
+  "name": "QueryAuthDemo",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "QueryAuth": {
+        "$path": "lib"
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "Demo": {
+          "$path": "src"
+        }
+      }
+    }
+  }
+}
