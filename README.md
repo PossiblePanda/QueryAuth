@@ -2,6 +2,11 @@
 
 QueryAuth is a type-safe permissions module for Roblox that allows for complicated permission checking logic, simplified into easy function calls.
 
+# Installation
+Currently, a prebuilt `.rbxl` file does not exist for QueryAuth, so if you want to use this in a non-wally project you will have to compile itself.
+
+If you are using Wally, you can add `queryauth = "possiblepanda/queryauth@0.1"` under your `[dependencies]` in `wally.toml`.
+
 ## Features
 
 - Blazingly Fast
@@ -17,7 +22,7 @@ local condition = QueryAuth.one { -- ONLY returns true if one or more conditions
     QueryAuth.UserId({123456}),
     QueryAuth.Team("Enemy"),
 
-    QueryAuth.all { -- ONLY returns true if ALL conditions are true
+    QueryAuth.all { -- ONLY returns true if ALL conditions are true. You can nest these because they return Lambdas.
         QueryAuth.UserId({654321}),
         QueryAuth.Team("Heroes")
     },
@@ -27,5 +32,5 @@ local condition = QueryAuth.one { -- ONLY returns true if one or more conditions
     end
 }
 
-print(condition())
+print(condition()) -- Conditions are just functions, so you run them using parentheses.
 ```
