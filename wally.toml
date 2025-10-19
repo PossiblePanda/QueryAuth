@@ -9,6 +9,6 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 exclude = ["**"]
-include = ["lib/**", "lib", "LICENSE.txt", "wally.toml"]
+include = ["lib/**", "LICENSE.txt", "wally.toml"]
 
 [dependencies]
