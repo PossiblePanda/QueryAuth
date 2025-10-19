@@ -3,12 +3,11 @@ name = "possiblepanda/queryauth"
 description = "A fully type-safe permissions module for Roblox Luau."
 license = "MIT"
 authors = ["Possible Panda"]
-version = "0.1.0"
+version = "1.0.0"
 
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 exclude = ["**"]
-include = ["lib/**", "LICENSE.txt", "wally.toml"]
-
-[dependencies]
+include = ["default.project.json", "lib", "lib/**", "LICENSE.txt", "wally.toml"]
+private = false

@@ -5,7 +5,7 @@ QueryAuth is a type-safe permissions module for Roblox that allows for complicat
 # Installation
 Currently, a prebuilt `.rbxl` file does not exist for QueryAuth, so if you want to use this in a non-wally project you will have to compile itself.
 
-If you are using Wally, you can add `queryauth = "possiblepanda/queryauth@0.1"` under your `[dependencies]` in `wally.toml`.
+If you are using Wally, you can add `queryauth = "possiblepanda/queryauth@1.0.0"` under your `[dependencies]` in `wally.toml`.
 
 ## Features
 
