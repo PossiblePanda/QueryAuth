@@ -4,3 +4,8 @@
 # Roblox Studio lock files
 /*.rbxlx.lock
 /*.rbxl.lock
+
+# Pesde files
+.pesde
+luau_packages
+lune_packages

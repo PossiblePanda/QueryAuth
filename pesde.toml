@@ -1,0 +1,32 @@
+name = "possiblepanda/queryauth"
+version = "0.1.0"
+description = "A fully type-safe permissions module for Roblox Luau."
+authors = ["Possible Panda"]
+repository = "https://github.com/PossiblePanda/QueryAuth"
+license = "MIT"
+includes = [
+  "pesde.toml",
+  "README.md",
+  "LICENSE",
+  "lib/**/*.luau",
+]
+
+[target]
+environment = "roblox"
+lib = "lib/init.luau"
+build_files = "lib"
+
+[indices]
+default = "https://github.com/pesde-pkg/index"
+
+[scripts]
+roblox_sync_config_generator = ".pesde/scripts/roblox_sync_config_generator.luau"
+sourcemap_generator = ".pesde/scripts/sourcemap_generator.luau"
+
+[dev_dependencies]
+scripts = { name = "pesde/scripts_rojo", version = "^0.2.0", target = "lune" }
+rojo = { name = "pesde/rojo", version = "^7.5.1", target = "lune" }
+
+[engines]
+pesde = "^0.7.0"
+lune = "^0.10.2"
