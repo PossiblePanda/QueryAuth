@@ -4,71 +4,26 @@
     A fully type-safe permissions module for Roblox Luau.
 ]]
 
+local Checks = require(script.Checks)
 local QueryAuthTypes = require(script.Types)
 
 local DefaultAuthConditionsFolder = script.DefaultAuthConditions
 
-local QueryAuth = {}
-
 type AuthCondition = QueryAuthTypes.AuthCondition
 
-export type QueryAuthModule = {
-	Team: (values: {string}?) -> AuthCondition,
-	UserId: (values: {number}?) -> AuthCondition,
-
-	all: (conditions: {AuthCondition}) -> AuthCondition,
-	one: (conditions: {AuthCondition}) -> AuthCondition,
-	has: (amount: number, conditions: {AuthCondition}) -> AuthCondition,
+export type QueryAuthModule = typeof(Checks) & {
+	Team: (...string|{string}) -> AuthCondition,
+	UserId: (...number|{number}) -> AuthCondition,
+	Name: (...string|{string}) -> AuthCondition,
+	IsStudio: AuthCondition,
 }
 
---[[
-    Combines multiple AuthConditions and only passes if *all* conditions are true.
-    @param conditions {AuthCondition} - List of conditions to evaluate.
-    @return AuthCondition - A lambda that evaluates to see if ALL conditions are true.
-]]
-function QueryAuth.all(conditions: {AuthCondition}): AuthCondition
-	return function(player: Player): boolean
-		for _, condition in conditions do
-			if not condition(player) then
-				return false
-			end
-		end
-		return true
-	end
-end
-
---[[
-    Combines multiple AuthConditions and only passes if *one* condition is true.
-    @param conditions {AuthCondition} - List of conditions to evaluate.
-    @return AuthCondition - A lambda that evaluates to see if ONE conditions are true.
-]]
-function QueryAuth.one(conditions: {AuthCondition}): AuthCondition
-	return QueryAuth.has(1, conditions)
-end
-
---[[
-    Combines multiple AuthConditions and only passes if *amount* conditions are true.
-    @param amount number - The amount of conditions that must pass.
-    @param conditions {AuthCondition} - List of conditions to evaluate.
-    @return AuthCondition - A lambda that evaluates to see if the amount of conditions are true.
-]]
-function QueryAuth.has(amount: number, conditions: {AuthCondition}): AuthCondition
-	return function(player: Player): boolean
-		local passed = 0
-		for _, condition in conditions do
-			if not condition(player) then continue end
-			
-			passed += 1
-			if passed >= amount then
-				return true
-			end
-		end
-		return false
-	end
-end
+local QueryAuth = (table.clone(Checks) :: QueryAuthModule)
 
 -- Add auth functions
 QueryAuth.Team = require(DefaultAuthConditionsFolder.Team)
 QueryAuth.UserId = require(DefaultAuthConditionsFolder.UserId)
+QueryAuth.Name = require(DefaultAuthConditionsFolder.Name)
+QueryAuth.IsStudio = require(DefaultAuthConditionsFolder.IsStudio)
 
-return QueryAuth :: QueryAuthModule
+return table.freeze(QueryAuth) :: QueryAuthModule
