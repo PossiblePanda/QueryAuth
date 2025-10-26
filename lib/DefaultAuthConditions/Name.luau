@@ -3,9 +3,9 @@ local QueryAuthTypes = require(script.Parent.Parent.Types)
 type AuthCondition = QueryAuthTypes.AuthCondition
 
 --[[
-    Checks if a player's Team matches the ones passed in `...`.
-    @param ... string|{string} - Teams to check against. If nothing is passed, no Team will pass.
-    @return AuthCondition - A lambda that evaluates to see if the player's Team matches the ones passed in `...`.
+    Checks if a player's Name matches the ones passed in `...`.
+    @param ... string|{string} - Names to check against. If nothing is passed, no Name will pass.
+    @return AuthCondition - A lambda that evaluates to see if the player's Name matches the ones passed in `...`.
 ]]
 return function(...: string|{string}): AuthCondition
     local values = {}
@@ -20,7 +20,7 @@ return function(...: string|{string}): AuthCondition
         end
     end
 
-	return function(player: Player): boolean
-        return values == nil or (player.Team ~= nil and table.find(values, player.Team.Name) ~= nil)
-    end
+    return function(player: Player): boolean
+		return values ~= nil and table.find(values, player.Name) ~= nil
+	end
 end
