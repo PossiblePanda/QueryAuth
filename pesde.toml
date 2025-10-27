@@ -4,9 +4,17 @@ description = "A fully type-safe permissions module for Roblox Luau."
 authors = ["PossiblePanda"]
 repository = "https://github.com/PossiblePanda/QueryAuth"
 license = "MIT"
+includes = [
+    "pesde.toml",
+    "lib/**/*.luau",
+    "README.md",
+    "LICENSE.txt"
+]
 
 [target]
 environment = "roblox"
+lib = "lib/init.luau"
+build_files = ['lib']
 
 [indices]
 default = "https://github.com/pesde-pkg/index"
