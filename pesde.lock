@@ -2,7 +2,7 @@
 # It is not intended for manual editing.
 format = 2
 name = "possiblepanda/queryauth"
-version = "0.1.0"
+version = "1.0.0"
 target = "roblox"
 
 [graph."0x5eal/unzip@0.2.0 luau".pkg_ref]
