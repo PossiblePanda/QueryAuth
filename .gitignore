@@ -9,3 +9,6 @@
 /.pesde
 /luau_packages
 /lune_packages
+
+# Build files
+QueryAuth.rbxm
