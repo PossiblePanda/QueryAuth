@@ -14,18 +14,16 @@ else
     print("Expected test1 to return true, got false")
 end
 
-local test2 = QueryAuth.GetPolicy("IsSubjectToChinaPolicies")
+local test2 = QueryAuth.Policy("IsSubjectToChinaPolicies")
 if test2(plr) == false then
     print("Expected test2 to return false, got false")
 else
     print("Expected test2 to return false, got true")
 end
 
-local test3 = QueryAuth.InStudio()
+local test3 = QueryAuth.Studio()
 if test3(plr) == RunService:IsStudio() then
     print("Expected test3 to return true, got true")
 else
     print("Expected test3 to return true, got false")
 end
-
-print(QueryAuth.HasPremium()(plr))
