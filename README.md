@@ -37,5 +37,5 @@ local condition = QueryAuth.one { -- ONLY returns true if one or more conditions
     end
 }
 
-print(condition()) -- Conditions are just functions, so you run them using parentheses.
+print(condition(player)) -- Conditions are just functions, so you run them using parentheses.
 ```
