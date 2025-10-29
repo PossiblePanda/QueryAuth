@@ -5,6 +5,9 @@
 /*.rbxlx.lock
 /*.rbxl.lock
 
+# Rojo files
+sourcemap.json
+
 # Pesde
 /.pesde
 /luau_packages
