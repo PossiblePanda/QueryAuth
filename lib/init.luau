@@ -20,6 +20,7 @@ export type QueryAuthModule = {
 	UserId: (values: {number}?) -> AuthCondition,
 	GetPolicy: (policy: Policy) -> AuthCondition,
 	InStudio: () -> AuthCondition,
+	HasPremium: () -> AuthCondition,
 
 	all: (conditions: {AuthCondition}) -> AuthCondition,
 	one: (conditions: {AuthCondition}) -> AuthCondition,
@@ -77,5 +78,6 @@ QueryAuth.Team = require(DefaultAuthConditionsFolder.Team)
 QueryAuth.UserId = require(DefaultAuthConditionsFolder.UserId)
 QueryAuth.GetPolicy = require(DefaultAuthConditionsFolder.GetPolicy)
 QueryAuth.InStudio = require(DefaultAuthConditionsFolder.InStudio)
+QueryAuth.HasPremium = require(DefaultAuthConditionsFolder.HasPremium)
 
 return QueryAuth :: QueryAuthModule

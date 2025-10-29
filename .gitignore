@@ -15,3 +15,6 @@ sourcemap.json
 
 # Build files
 QueryAuth.rbxm
+
+# VSCode files
+.vscode/

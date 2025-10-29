@@ -27,3 +27,5 @@ if test3(plr) == RunService:IsStudio() then
 else
     print("Expected test3 to return true, got false")
 end
+
+print(QueryAuth.HasPremium()(plr))
