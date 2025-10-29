@@ -18,9 +18,9 @@ type Policy = QueryAuthTypes.Policy
 export type QueryAuthModule = {
 	Team: (values: {string}?) -> AuthCondition,
 	UserId: (values: {number}?) -> AuthCondition,
-	GetPolicy: (policy: Policy) -> AuthCondition,
-	InStudio: () -> AuthCondition,
-	HasPremium: () -> AuthCondition,
+	Policy: (policy: Policy) -> AuthCondition,
+	Studio: () -> AuthCondition,
+	Premium: () -> AuthCondition,
 
 	all: (conditions: {AuthCondition}) -> AuthCondition,
 	one: (conditions: {AuthCondition}) -> AuthCondition,
@@ -76,8 +76,8 @@ end
 -- Add auth functions
 QueryAuth.Team = require(DefaultAuthConditionsFolder.Team)
 QueryAuth.UserId = require(DefaultAuthConditionsFolder.UserId)
-QueryAuth.GetPolicy = require(DefaultAuthConditionsFolder.GetPolicy)
-QueryAuth.InStudio = require(DefaultAuthConditionsFolder.InStudio)
-QueryAuth.HasPremium = require(DefaultAuthConditionsFolder.HasPremium)
+QueryAuth.Policy = require(DefaultAuthConditionsFolder.Policy)
+QueryAuth.Studio = require(DefaultAuthConditionsFolder.Studio)
+QueryAuth.Premium = require(DefaultAuthConditionsFolder.Premium)
 
 return QueryAuth :: QueryAuthModule
