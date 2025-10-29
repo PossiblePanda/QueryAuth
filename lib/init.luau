@@ -13,10 +13,12 @@ local DefaultAuthConditionsFolder = script.DefaultAuthConditions
 local QueryAuth = {}
 
 type AuthCondition = QueryAuthTypes.AuthCondition
+type Policy = QueryAuthTypes.Policy
 
 export type QueryAuthModule = {
 	Team: (values: {string}?) -> AuthCondition,
 	UserId: (values: {number}?) -> AuthCondition,
+	GetPolicy: (policy: Policy) -> AuthCondition,
 
 	all: (conditions: {AuthCondition}) -> AuthCondition,
 	one: (conditions: {AuthCondition}) -> AuthCondition,
@@ -72,5 +74,6 @@ end
 -- Add auth functions
 QueryAuth.Team = require(DefaultAuthConditionsFolder.Team)
 QueryAuth.UserId = require(DefaultAuthConditionsFolder.UserId)
+QueryAuth.GetPolicy = require(DefaultAuthConditionsFolder.GetPolicy)
 
 return QueryAuth :: QueryAuthModule
