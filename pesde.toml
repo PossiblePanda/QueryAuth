@@ -1,5 +1,5 @@
 name = "possiblepanda/queryauth"
-version = "1.0.0"
+version = "1.0.1"
 description = "A fully type-safe permissions module for Roblox Luau."
 authors = ["PossiblePanda"]
 repository = "https://github.com/PossiblePanda/QueryAuth"
