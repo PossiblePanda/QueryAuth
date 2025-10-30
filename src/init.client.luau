@@ -34,3 +34,10 @@ if test4(plr) == true then
 else
     print("Expected test4 to return true, got false")
 end
+
+local test5 = QueryAuth.FriendsWith(173213651, 1, 1)
+if test5(plr) == false then
+    print("Expected test5 to return false, got false")
+else
+    print("Expected test5 to return false, got true")
+end
