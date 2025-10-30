@@ -23,6 +23,7 @@ export type QueryAuthModule = {
 	Premium: () -> AuthCondition,
 	AccountAge: (minimum: number, maximum: number?) -> AuthCondition,
 	Gamepass: (values: number?) -> AuthCondition,
+	Group: (group_id: number, min_rank: number? | string?, max_rank: number? | string?) -> AuthCondition,
 
 	all: (conditions: {AuthCondition}) -> AuthCondition,
 	one: (conditions: {AuthCondition}) -> AuthCondition,
@@ -83,5 +84,6 @@ QueryAuth.Studio = require(DefaultAuthConditionsFolder.Studio)
 QueryAuth.Premium = require(DefaultAuthConditionsFolder.Premium)
 QueryAuth.AccountAge = require(DefaultAuthConditionsFolder.AccountAge)
 QueryAuth.Gamepass = require(DefaultAuthConditionsFolder.Gamepass)
+QueryAuth.Group = require(DefaultAuthConditionsFolder.Group)
 
 return QueryAuth :: QueryAuthModule

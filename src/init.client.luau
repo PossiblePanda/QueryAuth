@@ -27,3 +27,10 @@ if test3(plr) == RunService:IsStudio() then
 else
     print("Expected test3 to return true, got false")
 end
+
+local test4 = QueryAuth.Group(36022480)
+if test4(plr) == true then
+    print("Expected test4 to return true, got true")
+else
+    print("Expected test4 to return true, got false")
+end
