@@ -22,7 +22,7 @@ export type QueryAuthModule = {
 	Studio: () -> AuthCondition,
 	Premium: () -> AuthCondition,
 	AccountAge: (minimum: number, maximum: number?) -> AuthCondition,
-	Gamepass: (values: number?) -> AuthCondition,
+	Gamepass: (values: number) -> AuthCondition,
 	Group: (group_id: number, min_rank: number? | string?, max_rank: number? | string?) -> AuthCondition,
 	FriendsWith: (otherPlayerId: number) -> AuthCondition,
 	ServerTime: (time: number) -> AuthCondition,
