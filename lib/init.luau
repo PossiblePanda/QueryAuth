@@ -16,8 +16,8 @@ type AuthCondition = QueryAuthTypes.AuthCondition
 type Policy = QueryAuthTypes.Policy
 
 export type QueryAuthModule = {
-	Team: (values: {string}?) -> AuthCondition,
-	UserId: (values: {number}?) -> AuthCondition,
+	Team: (values: string?) -> AuthCondition,
+	UserId: (values: number?) -> AuthCondition,
 	Policy: (policy: Policy) -> AuthCondition,
 	Studio: () -> AuthCondition,
 	Premium: () -> AuthCondition,
@@ -26,6 +26,8 @@ export type QueryAuthModule = {
 	Group: (group_id: number, min_rank: number? | string?, max_rank: number? | string?) -> AuthCondition,
 	FriendsWith: (otherPlayerId: number) -> AuthCondition,
 	ServerTime: (time: number) -> AuthCondition,
+	Throttle: (time: number, mark: (() -> number)?) -> AuthCondition,
+	Once: () -> AuthCondition,
 
 	all: (conditions: {AuthCondition}) -> AuthCondition,
 	one: (conditions: {AuthCondition}) -> AuthCondition,
@@ -89,5 +91,7 @@ QueryAuth.Gamepass = require(DefaultAuthConditionsFolder.Gamepass)
 QueryAuth.Group = require(DefaultAuthConditionsFolder.Group)
 QueryAuth.FriendsWith = require(DefaultAuthConditionsFolder.FriendsWith)
 QueryAuth.ServerTime = require(DefaultAuthConditionsFolder.ServerTime)
+QueryAuth.Throttle = require(DefaultAuthConditionsFolder.Throttle)
+QueryAuth.Once = require(DefaultAuthConditionsFolder.Once)
 
 return QueryAuth :: QueryAuthModule

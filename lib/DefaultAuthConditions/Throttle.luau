@@ -8,7 +8,7 @@ return function(time: number, mark: (()->number)?)
     local fn = if mark then mark else os.clock
     local last = 0
 
-    return function(player: Player)
+    return function(_player: Player)
         local now = fn()
         if now - last >= time then
             last = now

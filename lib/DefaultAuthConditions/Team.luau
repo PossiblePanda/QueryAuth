@@ -7,8 +7,8 @@ type AuthCondition = QueryAuthTypes.AuthCondition
     @param values {string}? - List of team names to check against. If nil, any team will pass.
     @return AuthCondition - A lambda that evaluates to see if the player's team name is in the list.
 ]]
-return function(values: {string}?): AuthCondition
+return function(values: string?): AuthCondition
 	return function(player: Player): boolean
-        return values == nil or (player.Team ~= nil and table.find(values, player.Team.Name) ~= nil)
+        return values == nil or (player.Team ~= nil and player.Team.Name == values)
     end
 end
