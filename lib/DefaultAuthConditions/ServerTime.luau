@@ -11,6 +11,6 @@ type AuthCondition = QueryAuthTypes.AuthCondition
 return function(time: number): AuthCondition
 	return function(_player: Player): boolean
 
-        return Workspace:GetServerTimeNow() >= time
+        return Workspace.DistributedGameTime >= time
     end
 end
