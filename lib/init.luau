@@ -80,6 +80,17 @@ function QueryAuth.has(amount: number, conditions: {AuthCondition}): AuthConditi
 	end
 end
 
+--[[
+	Returns true if the AuthCondition is false.
+	@param condition AuthCondition - The condition to negate.
+	@return AuthCondition - A lambda that negates the provided condition.
+]]
+function QueryAuth.negate(condition: AuthCondition): AuthCondition
+	return function(player: Player)
+		return not condition(player)
+	end
+end
+
 -- Add auth functions
 QueryAuth.Team = require(DefaultAuthConditionsFolder.Team)
 QueryAuth.UserId = require(DefaultAuthConditionsFolder.UserId)
