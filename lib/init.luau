@@ -27,6 +27,7 @@ export type QueryAuthModule = {
 	FriendsWith: (otherPlayerId: number) -> AuthCondition,
 	ServerTime: (time: number) -> AuthCondition,
 	Throttle: (time: number, mark: (() -> number)?) -> AuthCondition,
+	GlobalThrottle: (time: number, mark: (() -> number)?) -> AuthCondition,
 	Once: () -> AuthCondition,
 
 	all: (conditions: {AuthCondition}) -> AuthCondition,
@@ -103,6 +104,7 @@ QueryAuth.Gamepass = require(DefaultAuthConditionsFolder.Gamepass)
 QueryAuth.Group = require(DefaultAuthConditionsFolder.Group)
 QueryAuth.FriendsWith = require(DefaultAuthConditionsFolder.FriendsWith)
 QueryAuth.ServerTime = require(DefaultAuthConditionsFolder.ServerTime)
+QueryAuth.GlobalThrottle = require(DefaultAuthConditionsFolder.GlobalThrottle)
 QueryAuth.Throttle = require(DefaultAuthConditionsFolder.Throttle)
 QueryAuth.Once = require(DefaultAuthConditionsFolder.Once)
 
