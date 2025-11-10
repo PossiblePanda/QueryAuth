@@ -7,8 +7,8 @@ type AuthCondition = QueryAuthTypes.AuthCondition
     @param values {number}? - List of UserIds to check against. If nil, no UserId will pass.
     @return AuthCondition - A lambda that evaluates to see if the player's UserId is in the list.
 ]]
-return function(values: {number}?): AuthCondition
+return function(values: number?): AuthCondition
 	return function(player: Player): boolean
-		return values ~= nil and table.find(values, player.UserId) ~= nil
+		return values ~= nil and player.UserId == values
 	end
 end

@@ -16,16 +16,18 @@ type AuthCondition = QueryAuthTypes.AuthCondition
 type Policy = QueryAuthTypes.Policy
 
 export type QueryAuthModule = {
-	Team: (values: {string}?) -> AuthCondition,
-	UserId: (values: {number}?) -> AuthCondition,
+	Team: (values: string?) -> AuthCondition,
+	UserId: (values: number?) -> AuthCondition,
 	Policy: (policy: Policy) -> AuthCondition,
 	Studio: () -> AuthCondition,
 	Premium: () -> AuthCondition,
 	AccountAge: (minimum: number, maximum: number?) -> AuthCondition,
-	Gamepass: (values: number) -> AuthCondition,
+	Gamepass: (gamepassId: number) -> AuthCondition,
 	Group: (group_id: number, min_rank: number? | string?, max_rank: number? | string?) -> AuthCondition,
 	FriendsWith: (otherPlayerId: number) -> AuthCondition,
 	ServerTime: (time: number) -> AuthCondition,
+	Throttle: (time: number, mark: (() -> number)?) -> AuthCondition,
+	Once: () -> AuthCondition,
 
 	all: (conditions: {AuthCondition}) -> AuthCondition,
 	one: (conditions: {AuthCondition}) -> AuthCondition,
@@ -78,6 +80,17 @@ function QueryAuth.has(amount: number, conditions: {AuthCondition}): AuthConditi
 	end
 end
 
+--[[
+	Returns true if the AuthCondition is false.
+	@param condition AuthCondition - The condition to negate.
+	@return AuthCondition - A lambda that negates the provided condition.
+]]
+function QueryAuth.negate(condition: AuthCondition): AuthCondition
+	return function(player: Player)
+		return not condition(player)
+	end
+end
+
 -- Add auth functions
 QueryAuth.Team = require(DefaultAuthConditionsFolder.Team)
 QueryAuth.UserId = require(DefaultAuthConditionsFolder.UserId)
@@ -89,5 +102,7 @@ QueryAuth.Gamepass = require(DefaultAuthConditionsFolder.Gamepass)
 QueryAuth.Group = require(DefaultAuthConditionsFolder.Group)
 QueryAuth.FriendsWith = require(DefaultAuthConditionsFolder.FriendsWith)
 QueryAuth.ServerTime = require(DefaultAuthConditionsFolder.ServerTime)
+QueryAuth.Throttle = require(DefaultAuthConditionsFolder.Throttle)
+QueryAuth.Once = require(DefaultAuthConditionsFolder.Once)
 
 return QueryAuth :: QueryAuthModule
