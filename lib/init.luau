@@ -32,6 +32,7 @@ export type QueryAuthModule = {
 	all: (conditions: {AuthCondition}) -> AuthCondition,
 	one: (conditions: {AuthCondition}) -> AuthCondition,
 	has: (amount: number, conditions: {AuthCondition}) -> AuthCondition,
+	negate: (condition: AuthCondition) -> AuthCondition
 }
 
 --[[
