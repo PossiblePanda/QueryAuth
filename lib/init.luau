@@ -24,6 +24,7 @@ export type QueryAuthModule = {
 	AccountAge: (minimum: number, maximum: number?) -> AuthCondition,
 	Gamepass: (gamepassId: number) -> AuthCondition,
 	Group: (group_id: number, min_rank: number? | string?, max_rank: number? | string?) -> AuthCondition,
+	Badge: (values: number?) -> AuthCondition,
 	FriendsWith: (otherPlayerId: number) -> AuthCondition,
 	ServerTime: (time: number) -> AuthCondition,
 	Throttle: (time: number, mark: (() -> number)?) -> AuthCondition,
@@ -102,6 +103,7 @@ QueryAuth.Premium = require(DefaultAuthConditionsFolder.Premium)
 QueryAuth.AccountAge = require(DefaultAuthConditionsFolder.AccountAge)
 QueryAuth.Gamepass = require(DefaultAuthConditionsFolder.Gamepass)
 QueryAuth.Group = require(DefaultAuthConditionsFolder.Group)
+QueryAuth.Badge = require(DefaultAuthConditionsFolder.Badge)
 QueryAuth.FriendsWith = require(DefaultAuthConditionsFolder.FriendsWith)
 QueryAuth.ServerTime = require(DefaultAuthConditionsFolder.ServerTime)
 QueryAuth.GlobalThrottle = require(DefaultAuthConditionsFolder.GlobalThrottle)
