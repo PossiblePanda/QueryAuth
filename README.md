@@ -23,7 +23,7 @@ If you are using Pesde, just run `pesde install possiblepanda/queryauth@1.0.0` t
 Below is an example of a simple permission made with QueryAuth.
 
 ```lua
-local condition = QueryAuth.one { -- ONLY returns true if one or more conditions are true
+local condition = QueryAuth.any { -- ONLY returns true if any conditions are true
     QueryAuth.UserId {123456},
     QueryAuth.Team {"Enemy"},
 

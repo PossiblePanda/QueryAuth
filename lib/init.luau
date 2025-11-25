@@ -31,10 +31,10 @@ export type QueryAuthModule = {
 	GlobalThrottle: (time: number, mark: (() -> number)?) -> AuthCondition,
 	Once: () -> AuthCondition,
 
-	all: (conditions: {AuthCondition}) -> AuthCondition,
-	one: (conditions: {AuthCondition}) -> AuthCondition,
-	has: (amount: number, conditions: {AuthCondition}) -> AuthCondition,
-	negate: (condition: AuthCondition) -> AuthCondition
+	all: (conditions: { AuthCondition }) -> AuthCondition,
+	one: (conditions: { AuthCondition }) -> AuthCondition,
+	has: (amount: number, conditions: { AuthCondition }) -> AuthCondition,
+	negate: (condition: AuthCondition) -> AuthCondition,
 }
 
 --[[
@@ -42,7 +42,7 @@ export type QueryAuthModule = {
     @param conditions {AuthCondition} - List of conditions to evaluate.
     @return AuthCondition - A lambda that evaluates to see if ALL conditions are true.
 ]]
-function QueryAuth.all(conditions: {AuthCondition}): AuthCondition
+function QueryAuth.all(conditions: { AuthCondition }): AuthCondition
 	return function(player: Player): boolean
 		for _, condition in conditions do
 			if not condition(player) then
@@ -54,11 +54,11 @@ function QueryAuth.all(conditions: {AuthCondition}): AuthCondition
 end
 
 --[[
-    Combines multiple AuthConditions and only passes if *one* condition is true.
+    Combines multiple AuthConditions and only passes if *any* condition is true.
     @param conditions {AuthCondition} - List of conditions to evaluate.
-    @return AuthCondition - A lambda that evaluates to see if ONE conditions are true.
+    @return AuthCondition - A lambda that evaluates to see if ANY conditions are true.
 ]]
-function QueryAuth.one(conditions: {AuthCondition}): AuthCondition
+function QueryAuth.any(conditions: { AuthCondition }): AuthCondition
 	return QueryAuth.has(1, conditions)
 end
 
@@ -68,12 +68,14 @@ end
     @param conditions {AuthCondition} - List of conditions to evaluate.
     @return AuthCondition - A lambda that evaluates to see if the amount of conditions are true.
 ]]
-function QueryAuth.has(amount: number, conditions: {AuthCondition}): AuthCondition
+function QueryAuth.has(amount: number, conditions: { AuthCondition }): AuthCondition
 	return function(player: Player): boolean
 		local passed = 0
 		for _, condition in conditions do
-			if not condition(player) then continue end
-			
+			if not condition(player) then
+				continue
+			end
+
 			passed += 1
 			if passed >= amount then
 				return true
