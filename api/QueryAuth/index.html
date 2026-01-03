@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">QueryAuth | QueryAuth</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://PossiblePanda.github.io/QueryAuth/api/QueryAuth"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="QueryAuth | QueryAuth"><meta data-rh="true" name="description" content="fully type-safe permissions module for Roblox Luau.
+
+For more information, check out the GitHub: https://github.com/PossiblePanda/QueryAuth"><meta data-rh="true" property="og:description" content="fully type-safe permissions module for Roblox Luau.
+
+For more information, check out the GitHub: https://github.com/PossiblePanda/QueryAuth"><link data-rh="true" rel="canonical" href="https://PossiblePanda.github.io/QueryAuth/api/QueryAuth"><link data-rh="true" rel="alternate" href="https://PossiblePanda.github.io/QueryAuth/api/QueryAuth" hreflang="en"><link data-rh="true" rel="alternate" href="https://PossiblePanda.github.io/QueryAuth/api/QueryAuth" hreflang="x-default"><link rel="stylesheet" href="/QueryAuth/assets/css/styles.b9f2c64d.css">
+<script src="/QueryAuth/assets/js/runtime~main.319ffbbe.js" defer="defer"></script>
+<script src="/QueryAuth/assets/js/main.23c40b66.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();null!==e?t(e):window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,t("light"))}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/QueryAuth/"><b class="navbar__title text--truncate">QueryAuth</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/QueryAuth/api/">API</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/PossiblePanda/QueryAuth" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/QueryAuth/api/QueryAuth">​Query​Auth</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/QueryAuth/api/Types">​Types</a></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Query</span><span style="display:inline-block">Auth</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>fully type-safe permissions module for Roblox Luau.</p>
+<p>For more information, check out the GitHub: <a href="https://github.com/PossiblePanda/QueryAuth">https://github.com/PossiblePanda/QueryAuth</a></p>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="all"><code style="text-decoration:none">all</code><a href="#all" class="hash-link" aria-label="Direct link to all" title="Direct link to all">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/init.luau#L45"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">all</code><code>(</code><div class="inset_uKQm"><div><code>conditions<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>List of conditions to evaluate.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that evaluates to see if ALL conditions are true.</p>
+</span></span></div><div>
+<p>Combines multiple AuthConditions and only passes if <em>all</em> conditions are true.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="any"><code style="text-decoration:none">any</code><a href="#any" class="hash-link" aria-label="Direct link to any" title="Direct link to any">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/init.luau#L61"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">any</code><code>(</code><div class="inset_uKQm"><div><code>conditions<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>List of conditions to evaluate.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that evaluates to see if ANY conditions are true.</p>
+</span></span></div><div>
+<p>Combines multiple AuthConditions and only passes if <em>any</em> condition is true.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="has"><code style="text-decoration:none">has</code><a href="#has" class="hash-link" aria-label="Direct link to has" title="Direct link to has">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/init.luau#L71"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">has</code><code>(</code><div class="inset_uKQm"><div><code>amount<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The amount of conditions that must pass.</p>
+</span></span></div><div><code>conditions<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>List of conditions to evaluate.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that evaluates to see if the amount of conditions are true.</p>
+</span></span></div><div>
+<p>Combines multiple AuthConditions and only passes if <em>amount</em> conditions are true.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="negate"><code style="text-decoration:none">negate</code><a href="#negate" class="hash-link" aria-label="Direct link to negate" title="Direct link to negate">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/init.luau#L93"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">negate</code><code>(</code><div class="inset_uKQm"><div><code>condition<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The condition to negate.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that negates the provided condition.</p>
+</span></span></div><div>
+<p>Returns true if the AuthCondition is false.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Policy"><code style="text-decoration:none">Policy</code><a href="#Policy" class="hash-link" aria-label="Direct link to Policy" title="Direct link to Policy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/Policy.luau#L14"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">Policy</code><code>(</code><code>policy<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#Policy">Policy</a></code><code class="op_lSLc">-</code><code class="blue_P4bS">The</code><code class="blue_P4bS">policy</code><code class="blue_P4bS">to</code><code class="blue_P4bS">check.</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><code class="op_lSLc">-</code><code class="blue_P4bS">A</code><code class="blue_P4bS">lambda</code><code class="blue_P4bS">that</code><code class="blue_P4bS">returns</code><code class="blue_P4bS">the</code><code class="blue_P4bS">value</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/PolicyService" target="_blank" rel="noopener noreferrer">PolicyService<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="blue_P4bS">provides.</code></div><div>
+<p>Checks if PolicyService allows the specified policy for the player.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Once"><code style="text-decoration:none">Once</code><a href="#Once" class="hash-link" aria-label="Direct link to Once" title="Direct link to Once">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/Once.luau#L7"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">Once</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that returns true if the player did not get checked by the condition before.</p>
+</span></span></div><div>
+<p>Checks to see if the player has not met this condition before.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="UserId"><code style="text-decoration:none">UserId</code><a href="#UserId" class="hash-link" aria-label="Direct link to UserId" title="Direct link to UserId">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/UserId.luau#L12"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">UserId</code><code>(</code><div class="inset_uKQm"><div><code>values<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">number</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code><span class="inlineDescription_G7Er">-- <span>
+<p>List of UserIds to check against. If nil, no UserId will pass.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that evaluates to see if the player's UserId is in the list.</p>
+</span></span></div><div>
+<p>Checks if a player's UserId is in the provided list of UserIds.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="AccountAge"><code style="text-decoration:none">AccountAge</code><a href="#AccountAge" class="hash-link" aria-label="Direct link to AccountAge" title="Direct link to AccountAge">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/AccountAge.luau#L13"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">AccountAge</code><code>(</code><div class="inset_uKQm"><div><code>minimum<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>Minimum account age in days.</p>
+</span></span></div><div><code>maximum<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Maximum account age in days. If nil, no maximum is enforced.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that evaluates to see if the player's account age meets the criteria.</p>
+</span></span></div><div>
+<p>Checks if a player's account age meets the specified minimum and maximum days.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Team"><code style="text-decoration:none">Team</code><a href="#Team" class="hash-link" aria-label="Direct link to Team" title="Direct link to Team">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/Team.luau#L12"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">Team</code><code>(</code><div class="inset_uKQm"><div><code>values<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">string</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code><span class="inlineDescription_G7Er">-- <span>
+<p>List of team names to check against. If nil, any team will pass.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that evaluates to see if the player's team name is in the list.</p>
+</span></span></div><div>
+<p>Checks if a player's team name is in the provided list of team names.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Gamepass"><code style="text-decoration:none">Gamepass</code><a href="#Gamepass" class="hash-link" aria-label="Direct link to Gamepass" title="Direct link to Gamepass">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/Gamepass.luau#L13"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">Gamepass</code><code>(</code><div class="inset_uKQm"><div><code>gamepass<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The gamepass asset ID to check against.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that evaluates to see if the player owns the specified gamepass.</p>
+</span></span></div><div>
+<p>Checks if the player owns the gamepass with the given asset ID.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Premium"><code style="text-decoration:none">Premium</code><a href="#Premium" class="hash-link" aria-label="Direct link to Premium" title="Direct link to Premium">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/Premium.luau#L11"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">Premium</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that returns true if the player has premium.</p>
+</span></span></div><div>
+<p>Checks to see if the player has premium.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ServerTime"><code style="text-decoration:none">ServerTime</code><a href="#ServerTime" class="hash-link" aria-label="Direct link to ServerTime" title="Direct link to ServerTime">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/ServerTime.luau#L13"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">ServerTime</code><code>(</code><code>time<!-- -->: </code><code class="blue_P4bS">number</code><code class="op_lSLc">-</code><code class="blue_P4bS">The</code><code class="blue_P4bS">time</code><code class="blue_P4bS">to</code><code class="blue_P4bS">check</code><code class="blue_P4bS">against,</code><code class="blue_P4bS">in</code><code class="blue_P4bS">seconds.</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><code class="op_lSLc">-</code><code class="blue_P4bS">A</code><code class="blue_P4bS">lambda</code><code class="blue_P4bS">that</code><code class="blue_P4bS">returns</code><code class="blue_P4bS">true</code><code class="blue_P4bS">if</code><code class="blue_P4bS">the</code><code class="blue_P4bS">server&#x27;s</code><code class="blue_P4bS">time</code><code class="blue_P4bS">is</code><code class="blue_P4bS">greater</code><code class="blue_P4bS">or</code><code class="blue_P4bS">equal</code><code class="blue_P4bS">to</code><code class="blue_P4bS">the</code><code class="blue_P4bS">provided</code><code class="blue_P4bS">time.</code></div><div>
+<p>Checks to see if the server's time is greater or equal to the provided time.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Throttle"><code style="text-decoration:none">Throttle</code><a href="#Throttle" class="hash-link" aria-label="Direct link to Throttle" title="Direct link to Throttle">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/Throttle.luau#L11"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">Throttle</code><code>(</code><div class="inset_uKQm"><div><code>time<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The time to check against, time unit depends on which function was passed on <em>mark</em>, but by default it's in seconds.</p>
+</span></span></div><div><code>mark<!-- -->: </code><code class="blue_P4bS">function</code><span class="inlineDescription_G7Er">-- <span>
+<p>An optional function which will be used to track intervals inside the function, defaults to <code>os.clock</code></p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that returns true if passed time parameter is greater or equal to time passed since last truthy return.</p>
+</span></span></div><div>
+<p>
+  Checks to see if time (<em>t</em>) is greater or equal to time passed since the last time the condition returned true.
+  This take into account intervals for individual players, tracking each interval for each player that was passed into the condition.
+  For a global functionality that does not separate player's intervals, use <code>QueryAuth.GlobalThrottle</code>
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Studio"><code style="text-decoration:none">Studio</code><a href="#Studio" class="hash-link" aria-label="Direct link to Studio" title="Direct link to Studio">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/Studio.luau#L12"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">Studio</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that returns true if game is running in studio.</p>
+</span></span></div><div>
+<p>Checks to see if the game is running in studio.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Badge"><code style="text-decoration:none">Badge</code><a href="#Badge" class="hash-link" aria-label="Direct link to Badge" title="Direct link to Badge">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/Badge.luau#L13"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">Badge</code><code>(</code><div class="inset_uKQm"><div><code>badgeId<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The badge ID to check against.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that evaluates to see if the player owns the specified badge.</p>
+</span></span></div><div>
+<p>Checks if the player owns the badge with the given badge ID.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="GlobalThrottle"><code style="text-decoration:none">GlobalThrottle</code><a href="#GlobalThrottle" class="hash-link" aria-label="Direct link to GlobalThrottle" title="Direct link to GlobalThrottle">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/GlobalThrottle.luau#L10"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">GlobalThrottle</code><code>(</code><div class="inset_uKQm"><div><code>time<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The time to check against, time unit depends on which function was passed on <em>mark</em>, but by default it's in seconds.</p>
+</span></span></div><div><code>mark<!-- -->: </code><code class="blue_P4bS">function</code><span class="inlineDescription_G7Er">-- <span>
+<p>An optional function which will be used to track intervals inside the function, defaults to <code>os.clock</code></p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that returns true if passed time parameter is greater or equal to time passed since last truthy return.</p>
+</span></span></div><div>
+<p>
+  Checks to see if time (<em>t</em>) is greater or equal to time passed since the last time the condition returned true.
+  This does not account intervals for individual players, rather globally. For that functionality, use <code>QueryAuth.Throttle</code>
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Group"><code style="text-decoration:none">Group</code><a href="#Group" class="hash-link" aria-label="Direct link to Group" title="Direct link to Group">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/PossiblePanda/QueryAuth/blob/master/lib/DefaultAuthConditions/Group.luau#L15"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>QueryAuth<!-- -->.</code><code class="green_DgR4">Group</code><code>(</code><div class="inset_uKQm"><div><code>group_id<!-- -->: </code><code class="blue_P4bS">number</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The Roblox group ID to check against.</p>
+</span></span></div><div><code>min_rank<!-- -->: </code><code class="blue_P4bS">number?</code><code class="op_lSLc"> | </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The minimum rank the player must have in the group.</p>
+</span></span></div><div><code>max_rank<!-- -->: </code><code class="blue_P4bS">number?</code><code class="op_lSLc"> | </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
+<p>The maximum rank the player can have in the group.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/QueryAuth/api/Types#AuthCondition">AuthCondition</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>A lambda that evaluates to see if the player is in the specified group with the given rank range.</p>
+</span></span></div><div>
+<p>Checks if the player is in the specified group with an optional rank range.</p>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;all&quot;,
+            &quot;desc&quot;: &quot;Combines multiple AuthConditions and only passes if *all* conditions are true.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;conditions&quot;,
+                    &quot;desc&quot;: &quot;List of conditions to evaluate.&quot;,
+                    &quot;lua_type&quot;: &quot;{AuthCondition}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that evaluates to see if ALL conditions are true.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 45,
+                &quot;path&quot;: &quot;lib/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;any&quot;,
+            &quot;desc&quot;: &quot;Combines multiple AuthConditions and only passes if *any* condition is true.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;conditions&quot;,
+                    &quot;desc&quot;: &quot;List of conditions to evaluate.&quot;,
+                    &quot;lua_type&quot;: &quot;{AuthCondition}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that evaluates to see if ANY conditions are true.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 61,
+                &quot;path&quot;: &quot;lib/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;has&quot;,
+            &quot;desc&quot;: &quot;Combines multiple AuthConditions and only passes if *amount* conditions are true.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;amount&quot;,
+                    &quot;desc&quot;: &quot;The amount of conditions that must pass.&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;conditions&quot;,
+                    &quot;desc&quot;: &quot;List of conditions to evaluate.&quot;,
+                    &quot;lua_type&quot;: &quot;{AuthCondition}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that evaluates to see if the amount of conditions are true.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 71,
+                &quot;path&quot;: &quot;lib/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;negate&quot;,
+            &quot;desc&quot;: &quot;Returns true if the AuthCondition is false.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;condition&quot;,
+                    &quot;desc&quot;: &quot;The condition to negate.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that negates the provided condition.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 93,
+                &quot;path&quot;: &quot;lib/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Policy&quot;,
+            &quot;desc&quot;: &quot;Checks if PolicyService allows the specified policy for the player.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;policy&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Policy - The policy to check.&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition - A lambda that returns the value PolicyService provides.&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 14,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/Policy.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Once&quot;,
+            &quot;desc&quot;: &quot;Checks to see if the player has not met this condition before.&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that returns true if the player did not get checked by the condition before.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 7,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/Once.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;UserId&quot;,
+            &quot;desc&quot;: &quot;Checks if a player&#x27;s UserId is in the provided list of UserIds.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;values&quot;,
+                    &quot;desc&quot;: &quot;List of UserIds to check against. If nil, no UserId will pass.&quot;,
+                    &quot;lua_type&quot;: &quot;{number}?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that evaluates to see if the player&#x27;s UserId is in the list.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 12,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/UserId.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;AccountAge&quot;,
+            &quot;desc&quot;: &quot;Checks if a player&#x27;s account age meets the specified minimum and maximum days.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;minimum&quot;,
+                    &quot;desc&quot;: &quot;Minimum account age in days.&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;maximum&quot;,
+                    &quot;desc&quot;: &quot;Maximum account age in days. If nil, no maximum is enforced.&quot;,
+                    &quot;lua_type&quot;: &quot;number?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that evaluates to see if the player&#x27;s account age meets the criteria.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 13,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/AccountAge.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Team&quot;,
+            &quot;desc&quot;: &quot;Checks if a player&#x27;s team name is in the provided list of team names.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;values&quot;,
+                    &quot;desc&quot;: &quot;List of team names to check against. If nil, any team will pass.&quot;,
+                    &quot;lua_type&quot;: &quot;{string}?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that evaluates to see if the player&#x27;s team name is in the list.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 12,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/Team.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Gamepass&quot;,
+            &quot;desc&quot;: &quot;Checks if the player owns the gamepass with the given asset ID.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;gamepass&quot;,
+                    &quot;desc&quot;: &quot;The gamepass asset ID to check against.&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that evaluates to see if the player owns the specified gamepass.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 13,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/Gamepass.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Premium&quot;,
+            &quot;desc&quot;: &quot;Checks to see if the player has premium.&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that returns true if the player has premium.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 11,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/Premium.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ServerTime&quot;,
+            &quot;desc&quot;: &quot;Checks to see if the server&#x27;s time is greater or equal to the provided time.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;time&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;number - The time to check against, in seconds.&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition - A lambda that returns true if the server&#x27;s time is greater or equal to the provided time.&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 13,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/ServerTime.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Throttle&quot;,
+            &quot;desc&quot;: &quot;Checks to see if time (*t*) is greater or equal to time passed since the last time the condition returned true.\nThis take into account intervals for individual players, tracking each interval for each player that was passed into the condition.\nFor a global functionality that does not separate player&#x27;s intervals, use `QueryAuth.GlobalThrottle`&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;time&quot;,
+                    &quot;desc&quot;: &quot;The time to check against, time unit depends on which function was passed on *mark*, but by default it&#x27;s in seconds.&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;mark&quot;,
+                    &quot;desc&quot;: &quot;An optional function which will be used to track intervals inside the function, defaults to `os.clock`&quot;,
+                    &quot;lua_type&quot;: &quot;function&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that returns true if passed time parameter is greater or equal to time passed since last truthy return.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 11,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/Throttle.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Studio&quot;,
+            &quot;desc&quot;: &quot;Checks to see if the game is running in studio.&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that returns true if game is running in studio.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 12,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/Studio.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Badge&quot;,
+            &quot;desc&quot;: &quot;Checks if the player owns the badge with the given badge ID.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;badgeId&quot;,
+                    &quot;desc&quot;: &quot;The badge ID to check against.&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that evaluates to see if the player owns the specified badge.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 13,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/Badge.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;GlobalThrottle&quot;,
+            &quot;desc&quot;: &quot;Checks to see if time (*t*) is greater or equal to time passed since the last time the condition returned true.\nThis does not account intervals for individual players, rather globally. For that functionality, use `QueryAuth.Throttle`&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;time&quot;,
+                    &quot;desc&quot;: &quot;The time to check against, time unit depends on which function was passed on *mark*, but by default it&#x27;s in seconds.&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;mark&quot;,
+                    &quot;desc&quot;: &quot;An optional function which will be used to track intervals inside the function, defaults to `os.clock`&quot;,
+                    &quot;lua_type&quot;: &quot;function&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that returns true if passed time parameter is greater or equal to time passed since last truthy return.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 10,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/GlobalThrottle.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Group&quot;,
+            &quot;desc&quot;: &quot;Checks if the player is in the specified group with an optional rank range.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;group_id&quot;,
+                    &quot;desc&quot;: &quot;The Roblox group ID to check against.&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;min_rank&quot;,
+                    &quot;desc&quot;: &quot;The minimum rank the player must have in the group.&quot;,
+                    &quot;lua_type&quot;: &quot;number? | string?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;max_rank&quot;,
+                    &quot;desc&quot;: &quot;The maximum rank the player can have in the group.&quot;,
+                    &quot;lua_type&quot;: &quot;number? | string?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A lambda that evaluates to see if the player is in the specified group with the given rank range.&quot;,
+                    &quot;lua_type&quot;: &quot;AuthCondition&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 15,
+                &quot;path&quot;: &quot;lib/DefaultAuthConditions/Group.luau&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [],
+    &quot;types&quot;: [],
+    &quot;name&quot;: &quot;QueryAuth&quot;,
+    &quot;desc&quot;: &quot;fully type-safe permissions module for Roblox Luau.\n\nFor more information, check out the GitHub: https://github.com/PossiblePanda/QueryAuth&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 8,
+        &quot;path&quot;: &quot;lib/init.luau&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#AccountAge" class="table-of-contents__link toc-highlight">.AccountAge</a></li><li><a href="#all" class="table-of-contents__link toc-highlight">.all</a></li><li><a href="#any" class="table-of-contents__link toc-highlight">.any</a></li><li><a href="#Badge" class="table-of-contents__link toc-highlight">.Badge</a></li><li><a href="#Gamepass" class="table-of-contents__link toc-highlight">.Gamepass</a></li><li><a href="#GlobalThrottle" class="table-of-contents__link toc-highlight">.GlobalThrottle</a></li><li><a href="#Group" class="table-of-contents__link toc-highlight">.Group</a></li><li><a href="#has" class="table-of-contents__link toc-highlight">.has</a></li><li><a href="#negate" class="table-of-contents__link toc-highlight">.negate</a></li><li><a href="#Once" class="table-of-contents__link toc-highlight">.Once</a></li><li><a href="#Policy" class="table-of-contents__link toc-highlight">.Policy</a></li><li><a href="#Premium" class="table-of-contents__link toc-highlight">.Premium</a></li><li><a href="#ServerTime" class="table-of-contents__link toc-highlight">.ServerTime</a></li><li><a href="#Studio" class="table-of-contents__link toc-highlight">.Studio</a></li><li><a href="#Team" class="table-of-contents__link toc-highlight">.Team</a></li><li><a href="#Throttle" class="table-of-contents__link toc-highlight">.Throttle</a></li><li><a href="#UserId" class="table-of-contents__link toc-highlight">.UserId</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 PossiblePanda. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
