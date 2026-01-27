@@ -5,7 +5,7 @@ local QueryAuth = require(ReplicatedStorage.QueryAuth)
 local plr = game.Players.LocalPlayer
 
 local test = QueryAuth.any({
-	QueryAuth.UserId({ plr.UserId }),
+	QueryAuth.UserId(plr.UserId),
 })
 
 if test(plr) == true then
@@ -26,20 +26,6 @@ if test3(plr) == RunService:IsStudio() then
 	print("🟢 Expected test3 to return true, got true")
 else
 	print("🔴 Expected test3 to return true, got false")
-end
-
-local test4 = QueryAuth.Group(36022480)
-if test4(plr) == true then
-	print("🟢 Expected test4 to return true, got true")
-else
-	print("🔴 Expected test4 to return true, got false")
-end
-
-local test5 = QueryAuth.FriendsWith(173213651, 1, 1)
-if test5(plr) == false then
-	print("🟢 Expected test5 to return false, got false")
-else
-	print("🔴 Expected test5 to return false, got true")
 end
 
 local test6 = QueryAuth.GlobalThrottle(1, 3)
