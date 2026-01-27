@@ -7,10 +7,10 @@ QueryAuth is a type-safe permissions module for Roblox that allows for complicat
 If you are using just Roblox studio, or want to manually import the module, you can get the latest version from the [Releases](https://github.com/PossiblePanda/QueryAuth/releases) tab, OR get it from the [Creator Marketplace/Toolbox](https://create.roblox.com/store/asset/83237880339343/QueryAuth)
 
 ### Wally
-If you are using Wally, simply just add `queryauth = "possiblepanda/queryauth@1.0.0"` under your `[dependencies]` in `wally.toml`.
+If you are using Wally, simply just add `queryauth = "possiblepanda/queryauth@1.1.0"` under your `[dependencies]` in `wally.toml`.
 
 ### Pesde
-If you are using Pesde, just run `pesde install possiblepanda/queryauth@1.0.0` to install the module.
+If you are using Pesde, just run `pesde install possiblepanda/queryauth@1.1.0` to install the module.
 
 ## Features
 
