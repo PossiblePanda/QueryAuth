@@ -24,12 +24,12 @@ Below is an example of a simple permission made with QueryAuth.
 
 ```lua
 local condition = QueryAuth.any { -- ONLY returns true if any conditions are true
-    QueryAuth.UserId {123456},
-    QueryAuth.Team {"Enemy"},
+    QueryAuth.UserId(123456),
+    QueryAuth.Team("Enemy"),
 
     QueryAuth.all { -- ONLY returns true if ALL conditions are true. You can nest these because they return Lambdas.
-        QueryAuth.UserId {654321},
-        QueryAuth.Team {"Heroes"}
+        QueryAuth.UserId(654321),
+        QueryAuth.Team("Heroes")
     },
 
     function(plr: Player) -- Because conditions return a Lambda, you can just put a function in that returns a boolean!
