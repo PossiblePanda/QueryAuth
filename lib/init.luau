@@ -12,7 +12,7 @@ local DefaultAuthConditionsFolder = script.DefaultAuthConditions
 
 local QueryAuth = {}
 
-type AuthCondition = QueryAuthTypes.AuthCondition
+export type AuthCondition = QueryAuthTypes.AuthCondition
 type Policy = QueryAuthTypes.Policy
 
 export type QueryAuthModule = {
@@ -58,7 +58,7 @@ end
 	@param conditions {AuthCondition} -- List of conditions to evaluate.
 	@return AuthCondition -- A lambda that evaluates to see if ANY conditions are true.
 ]=]
-function QueryAuth.any(conditions: { AuthCondition }): AuthCondition
+function QueryAuth.one(conditions: { AuthCondition }): AuthCondition
 	return QueryAuth.has(1, conditions)
 end
 
